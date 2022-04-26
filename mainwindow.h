@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "aboutprogram.h"
 #include "buttonchange.h"
+#include <QTranslator>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +17,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    virtual void keyPressEvent(QKeyEvent *event);
 
 private slots:
     void on_open_triggered();
@@ -34,10 +38,21 @@ private slots:
 
     void on_treeViewShow_triggered();
 
+    void on_dark_triggered();
+
+    void on_light_triggered();
+
+    void on_russian_triggered();
+
+    void on_english_triggered();
+
 private:
     Ui::MainWindow *ui;
     aboutProgram *aboutPr;
     buttonChange *btnCh;
+    QTranslator qtranslator;
+
+    void setDefaultLanguage();
 
 };
 #endif // MAINWINDOW_H

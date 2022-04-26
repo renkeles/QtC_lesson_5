@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>204</width>
-    <height>100</height>
+    <height>108</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -105,7 +105,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QRadioButton" name="radioButton_ctrl_N">
+        <widget class="QRadioButton" name="radioButton_ctrl_n">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>7</horstretch>
@@ -293,9 +293,9 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_create"/>
-  <buttongroup name="buttonGroup_open"/>
-  <buttongroup name="buttonGroup_save"/>
   <buttongroup name="buttonGroup_quit"/>
+  <buttongroup name="buttonGroup_save"/>
+  <buttongroup name="buttonGroup_open"/>
+  <buttongroup name="buttonGroup_create"/>
  </buttongroups>
 </ui>
