@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTranslator>
+#include "language.h"
 
 namespace Ui {
 class buttonChange;
@@ -20,7 +21,7 @@ public:
     bool getCheckNew();
     bool getCheckQuit();
 
-    void setLanguage(int codeLanguage);
+    void setLanguage(Language::CodeLanguage code);
 private:
     Ui::buttonChange *ui;
     QTranslator qtranslator;

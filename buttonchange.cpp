@@ -52,9 +52,9 @@ void buttonChange::setDefaultLanguage()
     ui->labelQuit->setText(tr("Выход"));
 }
 
-void buttonChange::setLanguage(int codeLanguage)
+void buttonChange::setLanguage(Language::CodeLanguage code)
 {
-    if(codeLanguage)
+    if(Language::CodeLanguage::en == code)
     {
         qtranslator.load(":/language/qm/QtLanguage_en.qm");
         qApp->installTranslator(&qtranslator);

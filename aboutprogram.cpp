@@ -25,9 +25,9 @@ void aboutProgram::setDefaultLanguage()
     ui->label_info->setText(tr("Блокнот by Renkeles"));
 }
 
-void aboutProgram::setLanguage(int codeLanguage)
+void aboutProgram::setLanguage(Language::CodeLanguage code)
 {
-    if(codeLanguage)
+    if(Language::CodeLanguage::en == code)
     {
         qtranslator.load(":/language/qm/QtLanguage_en.qm");
         qApp->installTranslator(&qtranslator);

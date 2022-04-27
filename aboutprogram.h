@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTranslator>
+#include "language.h"
 
 namespace Ui {
 class aboutProgram;
@@ -16,7 +17,7 @@ public:
     explicit aboutProgram(QDialog *parent = nullptr);
     ~aboutProgram();
 
-    void setLanguage(int codeLanguage);
+    void setLanguage(Language::CodeLanguage code);
 
 private:
     Ui::aboutProgram *ui;

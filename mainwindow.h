@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "aboutprogram.h"
 #include "buttonchange.h"
+#include "language.h"
 #include <QTranslator>
 #include <QFileSystemModel>
 

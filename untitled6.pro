@@ -11,12 +11,14 @@ CONFIG += c++11
 SOURCES += \
     aboutprogram.cpp \
     buttonchange.cpp \
+    language.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     aboutprogram.h \
     buttonchange.h \
+    language.h \
     mainwindow.h
 
 FORMS += \

@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     qApp->setStyleSheet(styleSheet);
 
     setDefaultLanguage();
+    MainWindow::on_russian_triggered();
 
     model = new QFileSystemModel;
     model->setRootPath("");
@@ -244,8 +245,8 @@ void MainWindow::on_russian_triggered()
 {
     qtranslator.load(":/language/qm/QtLanguage_ru.qm");
     qApp->installTranslator(&qtranslator);
-    btnCh->setLanguage(0);
-    aboutPr->setLanguage(0);
+    btnCh->setLanguage(Language::CodeLanguage::ru);
+    aboutPr->setLanguage(Language::CodeLanguage::ru);
     ui->retranslateUi(this);
 }
 
@@ -254,8 +255,8 @@ void MainWindow::on_english_triggered()
 {
     qtranslator.load(":/language/qm/QtLanguage_en.qm");
     qApp->installTranslator(&qtranslator);
-    btnCh->setLanguage(1);
-    aboutPr->setLanguage(1);
+    btnCh->setLanguage(Language::CodeLanguage::en);
+    aboutPr->setLanguage(Language::CodeLanguage::en);
     ui->retranslateUi(this);
 }
 
@@ -267,7 +268,6 @@ void MainWindow::on_treeFileView_doubleClicked(const QModelIndex &index)
 {
 
         QFile file(model->filePath(index));
-        qDebug() << file;
         if(file.open(QFile::ReadOnly | QFile::Text))
         {
             QTextStream stream(&file);
