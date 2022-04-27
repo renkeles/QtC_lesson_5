@@ -3,7 +3,7 @@
 #include "QFileDialog"
 #include "QTextStream"
 #include "buttonchange.h"
-
+#include <QDebug>
 
 
 
@@ -29,6 +29,12 @@ MainWindow::MainWindow(QWidget *parent)
     qApp->setStyleSheet(styleSheet);
 
     setDefaultLanguage();
+
+    model = new QFileSystemModel;
+    model->setRootPath("");
+
+    ui->treeFileView->setModel(model);
+    ui->treeFileView->setColumnWidth(0,200);
 }
 
 MainWindow::~MainWindow()
@@ -255,4 +261,20 @@ void MainWindow::on_english_triggered()
 
 
 
+
+
+void MainWindow::on_treeFileView_doubleClicked(const QModelIndex &index)
+{
+
+        QFile file(model->filePath(index));
+        qDebug() << file;
+        if(file.open(QFile::ReadOnly | QFile::Text))
+        {
+            QTextStream stream(&file);
+            ui->MainPlainTextEdit->setPlainText(stream.readAll());
+            ui->MainPlainTextEdit->setReadOnly(false);
+            file.close();
+        }
+
+}
 

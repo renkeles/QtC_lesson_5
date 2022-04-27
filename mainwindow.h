@@ -5,6 +5,7 @@
 #include "aboutprogram.h"
 #include "buttonchange.h"
 #include <QTranslator>
+#include <QFileSystemModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -46,11 +47,14 @@ private slots:
 
     void on_english_triggered();
 
+    void on_treeFileView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     aboutProgram *aboutPr;
     buttonChange *btnCh;
     QTranslator qtranslator;
+    QFileSystemModel *model;
 
     void setDefaultLanguage();
 
